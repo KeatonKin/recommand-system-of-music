@@ -1,19 +1,14 @@
-<script setup>
-
-
-  const click = ()=>{
-
-
-   fetch("/api/api/get_name")
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-
-  }
-</script>
-
 <template>
-  <button @click="click">111</button>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'App'
+};
+</script>
 
 <style scoped>
 .logo {

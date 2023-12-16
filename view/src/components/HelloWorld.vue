@@ -1,40 +1,87 @@
-<script setup>
-import { ref } from 'vue'
-
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
-</script>
-
 <template>
-  <h1>{{ msg }}</h1>
+  <div class="homepage">
+    <!-- Header -->
+    <header>
+      <h1 class="logo">DinoFM</h1>
+      <p class="slogan">Listen Now</p>
+    </header>
 
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+    <!-- Main content area -->
+    <main>
+      <div class="cta">
+        <!-- Call-to-action buttons (e.g., Register and Login) -->
+        <button class="cta-button">Register</button>
+        <button class="cta-button">Login</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p class="about">About</p>
+    </footer>
   </div>
-
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
+<script>
+export default {
+  name: 'Home',
+  // Your component logic goes here
+};
+</script>
+
 <style scoped>
-.read-the-docs {
-  color: #888;
+/* Your component styles go here */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.homepage {
+  background-color: #FFDAB9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+}
+
+.logo {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.slogan {
+  font-size: 50px;
+}
+
+main {
+  margin-top: 20px;
+}
+
+.cta {
+  display: flex;
+  gap: 10px;
+}
+
+.cta-button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+.about {
+  font-size: 16px;
+  cursor: pointer;
 }
 </style>
