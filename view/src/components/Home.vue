@@ -9,7 +9,7 @@
     <main>
       <div class="cta">
         <div class="login-box cta-box">
-          <button class="cta-button">登录</button>
+          <router-link to="/signin" class="cta-button">登录</router-link>
         </div>
         <div class="register-box cta-box">
           <button class="cta-button">注册</button>
@@ -18,7 +18,7 @@
     </main>
     <!-- Footer -->
     <footer class="footer">
-      <p class="about">关于</p>
+      <router-link to="/about" class="about">关于</router-link>
     </footer>
   </div>
 </template>
@@ -91,6 +91,18 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login-box .cta-button {
+  color: #fff;
+  text-decoration: none; /* 去掉下划线 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box:hover .cta-button {
+  text-decoration: none; /* 去掉下划线 */
 }
 
 .register-box .cta-button {

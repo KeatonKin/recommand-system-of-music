@@ -1,15 +1,10 @@
-# recommand-system-of-music
+# recommend-system-of-music
 ## Target 
 What?
       Recommand system of music
-How?
-      CNN & NLTK
-Why?
-      Achieve improve myself 
-## prd
-## 原型图
-## 实现
-## 测试
+
+
+
 
 ```
 recommand-system-of-music
@@ -50,8 +45,6 @@ recommand-system-of-music
 │  └─ manage.py
 ├─ README.md
 └─ view
-   ├─ .vscode
-   │  └─ extensions.json
    ├─ index.html
    ├─ package-lock.json
    ├─ package.json
@@ -63,8 +56,14 @@ recommand-system-of-music
    │  ├─ assets
    │  │  └─ vue.svg
    │  ├─ components
-   │  │  └─ HelloWorld.vue
+   │  │  ├─ About.vue
+   │  │  ├─ HelloWorld.vue
+   │  │  ├─ Home.vue
+   │  │  ├─ Signin.vue
+   │  │  └─ Signup.vue
    │  ├─ main.js
+   │  ├─ router
+   │  │  └─ index.js
    │  └─ style.css
    └─ vite.config.js
 
