@@ -17,7 +17,7 @@
       </div>
     </main>
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
       <p class="about">关于</p>
     </footer>
   </div>
@@ -26,6 +26,10 @@
 <script>
   export default {
     name: 'Home',
+    mounted() {
+      document.title = 'DinoFm';
+    },
+    
     // Your component logic goes here
   };
 </script>
@@ -43,7 +47,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  position: relative; /* 添加相对定位 */
+  position: relative; 
 }
 
 header {
@@ -55,7 +59,7 @@ header {
   margin-bottom: 5px;
   position: absolute;
   top: 25px;
-  left: 50%; /* 使用left和transform属性进行水平居中对齐 */
+  left: 50%; 
   transform: translateX(-50%);
 }
 
@@ -63,19 +67,20 @@ header {
   font-size: 100px;
   color: #000;
   font-family: 'Your Desired Font', sans-serif;
-  font-weight: bold; /* 添加这一行来设置为粗体 */
+  font-weight: bold; 
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 main {
   margin-top: 20px;
 }
 
 .cta {
   display: flex;
-  flex-direction: column; /* 修改为垂直排列 */
+  flex-direction: column; 
   gap: 10px;
 }
 
@@ -89,13 +94,13 @@ main {
 }
 
 .register-box .cta-button {
-  color: #000; /* 设置文字颜色为黑色 */
+  color: #000; 
 }
 
 .login-box {
   background-color: #000;
   color: #fff;
-  border-radius: 15px; /* 设置圆角半径 */
+  border-radius: 15px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,7 +109,7 @@ main {
 .register-box {
   background-color: #fff;
   color: #000;
-  border-radius: 15px; /* 设置圆角半径 */
+  border-radius: 15px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,24 +120,25 @@ main {
   height: 60px;
   padding: 10px;
   font-size: 16px;
-  color: #fff; /* 设置文字颜色为白色 */
-  background-color: transparent; /* 设置背景色为透明 */
-  border: none; /* 移除按钮边框 */
-  cursor: pointer; /* 添加鼠标指针效果 */
+  color: #fff; 
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer; 
 }
 
 .footer {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   width: 100%;
   text-align: center;
-  padding: 20px; /* 可选，根据需要调整 */
-  background-color: #F5F5DC; /* 与页面背景颜色一致 */
+  padding: 20px; 
+  background-color: #F5F5DC; 
 }
 .about {
   font-size: 16px;
-  color: #000; /* 设置文字颜色为黑色 */
+  color: #000; 
   cursor: pointer;
+  text-decoration: underline;
 }
 
 </style>
