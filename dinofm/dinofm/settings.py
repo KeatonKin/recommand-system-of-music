@@ -33,11 +33,16 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'corsheaders',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api.apps.ApiConfig'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # 你的前端应用的地址
 ]
 
 MIDDLEWARE = [

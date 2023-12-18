@@ -4,19 +4,39 @@
       <img src="/logo/nobody.png" alt="DinoFm photo" />
     </div>
     <h2 class="signin-heading">Sign in to DinoFm</h2>
-    <input type="text" placeholder="用户名" class="input-field" />
-    <input type="password" placeholder="密码" class="input-field" />
-    <button class="signin-button">登录</button>
+    <input type="text" placeholder="用户名" class="input-field" v-model="username" id="username" required/>
+    <input type="password" placeholder="密码" class="input-field" v-model="password" id="password" required/>
+    <button class="signin-button" @click="login">登录</button>
     <p class="signup-link">没有账号? <router-link to="/signup">去注册</router-link></p>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Signin',
   mounted() {
     document.title = 'DinoFm';
   },
+  data() {
+    return {
+      username: '',
+      password: ''
+    };
+  },
+  methods: {
+    login() {
+    this.$axios.post('/api/login', { username: this.username, password: this.password })
+      .then(response => {
+        console.log('Login successful');
+        this.$router.push('/mainpage');
+      })
+      .catch(error => {
+        console.error('Login failed:', error.response.data.message);
+      });
+  }
+  }
 };
 </script>
 

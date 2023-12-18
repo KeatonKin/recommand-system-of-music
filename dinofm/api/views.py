@@ -1,38 +1,18 @@
-import json
-
-from django.core import serializers
+from django.contrib.auth import authenticate
 from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods
-
-from api.models import Test
 
 
-@require_http_methods(["GET"])
-def add_name(request):
-    response = {}
-    try:
-        name = request.GET.get('name')
-        age = request.GET.get('age')
-        book = Test(name=name, age=age)
-        book.save()
-        response['respMsg'] = 'success'
-        response['respCode'] = '000000'
-    except Exception as e:
-        response['respMsg'] = str(e)
-        response['respCode'] = '999999'
-    return JsonResponse(response)
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
+        # 使用 Django 内置的 authenticate 函数进行身份验证
+        user = authenticate(request, username=username, password=password)
 
-@require_http_methods(["GET"])
-def get_name(request):
-    response = {}
-    try:
-        books = Test.objects.filter()
-        response['list'] = json.loads(serializers.serialize("json", books))
-        response['respMsg'] = 'success'
-        response['respCode'] = '000000'
-
-    except Exception as e:
-        response['respMsg'] = str(e)
-        response['respCode'] = '999999'
-    return JsonResponse(response)
+        if user is not None:
+            # 登录成功
+            return JsonResponse({'message': '登录成功'})
+        else:
+            # 登录失败
+            return JsonResponse({'message': '登录失败，请检查用户名和密码。'}, status=400)
