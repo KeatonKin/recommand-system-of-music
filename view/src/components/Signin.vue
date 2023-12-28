@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 .login-page {
-  background-color: #F5F5DC;
+  background: linear-gradient(to right, #F5F5DC, #F5DEB3);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -61,12 +61,12 @@ export default {
 }
 
 .signin-heading {
-  font-size: 24px;
+  font-size: 35px;
   margin-bottom: 20px;
 }
 
 .input-field {
-  width: 250px;
+  width: 360px;
   height: 25px;
   margin-bottom: 10px;
   padding: 5px;
@@ -87,13 +87,17 @@ export default {
   height: 25px;
   font-size: 16px;
   color: #fff;
-  background-color: #000;
+  background-color: #FF6A6A;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+
+  &:hover {
+    background-color: #EE6363;
+  }
 }
 
-.register-link {
+.signup-link {
   margin-top: 20px;
   font-size: 14px;
   color: #000;

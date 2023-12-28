@@ -27,7 +27,7 @@ export default {
 <style scoped>
 
 .about-page {
-  background-color: #F5F5DC;
+  background: linear-gradient(to right, #F5F5DC, #F5DEB3);
   padding: 20px;
   display: flex;
   flex-direction: column;

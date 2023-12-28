@@ -12,7 +12,7 @@
           <router-link to="/signin" class="cta-button">登录</router-link>
         </div>
         <div class="register-box cta-box">
-          <button class="cta-button">注册</button>
+          <router-link to="/signup" class="cta-button">注册</router-link>
         </div>
       </div>
     </main>
@@ -41,7 +41,7 @@ body {
 }
 
 .homepage {
-  background-color: #F5F5DC;
+  background: linear-gradient(to right, #F5F5DC, #F5DEB3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,12 +101,20 @@ main {
   align-items: center;
 }
 
+.register-box .cta-button {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-box:hover .cta-button {
   text-decoration: none; /* 去掉下划线 */
 }
 
-.register-box .cta-button {
-  color: #000; 
+.register-box:hover .cta {
+  text-decoration: none;
 }
 
 .login-box {
@@ -144,7 +152,7 @@ main {
   width: 100%;
   text-align: center;
   padding: 20px; 
-  background-color: #F5F5DC; 
+  background: linear-gradient(to right, #F5F5DC, #F5DEB3);
 }
 .about {
   font-size: 16px;
